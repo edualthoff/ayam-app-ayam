@@ -1,0 +1,22 @@
+<ion-row>
+  <ng-container *ngFor="let info of (infoValues)">
+    <ion-col size="12" size-sm="6" style="padding-top: 0;">
+      <ion-card style="margin-top: 7px;">
+        <img [src]="info.uploadFile[0].fileUrl" style="height: 100px; width: 100%; object-fit: cover;" />
+        <ion-card-header style="padding-top: 8px;">
+          <ion-card-title>{{info.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{info.subTitulo}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content (click)="routLinkInfo(info?.id)">
+          <ng-container *ngIf="info.textoCurto; then thenTemplate; else elseTemplate"></ng-container>
+          <ng-template #thenTemplate>
+            <div class="text-llipsis-2line" [innerHTML]="info.textoCurto"></div>
+          </ng-template>
+          <ng-template #elseTemplate>
+            <div class="text-llipsis-2line" [innerHTML]="info.corpoMensagem"></div>
+          </ng-template>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ng-container>
+</ion-row>

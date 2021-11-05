@@ -1,0 +1,14 @@
+
+.swiper-pagination-bullet {
+  --bullet-background: var(--ion-color-secondary-shade);
+}
+
+.swiper-pagination.swiper-pagination-custom-bullets {
+  left: 0px;
+  bottom: 25px !important;
+  width: 100%;
+  .swiper-pagination-bullet {
+    margin-left: 3px;
+    --bullet-background: var(--ion-color-secondary-shade);
+  }
+}

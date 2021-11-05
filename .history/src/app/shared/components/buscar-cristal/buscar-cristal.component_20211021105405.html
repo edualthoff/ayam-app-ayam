@@ -1,0 +1,32 @@
+<section>
+  <ion-grid style="padding: 0;">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="10">
+        <ion-searchbar animated="true" placeholder="Explorar" inputmode="search" style="padding:0;"></ion-searchbar>
+      </ion-col>
+      <ion-col size="1">
+        <div class="app-button-icon" (click)="buttonCaract = !buttonCaract" [ngClass]="{'app-b-i-active': buttonCaract}">
+          <fa-icon [icon]="['fas', 'angle-double-up']" size="2x" ></fa-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Filtro por caracteristica -->
+  <ng-container *ngIf="buttonCaract">
+    <ion-row class="app-row-slide-icon" appIconButtonChange>
+      <ion-col *ngFor='let caract of caractList ;let i = index'>
+        <div class="app-slide-icon" (click)="onClickCarac()" appIconActive>
+          <ion-icon [src]="caract.pathUrlIcon" ></ion-icon>
+          <ion-label>{{caract.nome}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</section>
+
+

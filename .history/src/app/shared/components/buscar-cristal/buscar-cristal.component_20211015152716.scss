@@ -1,0 +1,25 @@
+
+@use '../../../theme/utils/transitions';
+
+.app-button-icon {
+  transform: rotate(0deg);
+  transition: transitions.fast-out-slow(transform);
+  &.app-b-i-active {
+    transform: rotate(180deg);
+    transition: transitions.fast-out-slow(transform);
+  }
+}
+
+.app-row-slide-icon {
+  overflow-x: auto;
+  flex-flow: nowrap;
+  ion-col{
+    text-align: center;
+    height: 50px;
+    .app-slide-icon {
+      width: 60px;
+      font-size: 12px;
+      display: grid;
+    }
+  }
+}

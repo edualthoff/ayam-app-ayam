@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Visualizar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Summary</ion-label>
+    <ion-textarea disabled readonly value="Ionic enables developers to build performant, high-quality mobile apps.">
+    </ion-textarea>
+  </ion-item>
+  <ng-container *ngIf="(spinnerLoadService.loading$ | async) || !infoValue; then thenTemplate; else elseTemplate">
+  </ng-container>
+  <ng-template #thenTemplate>
+    <app-spinner-load></app-spinner-load>
+  </ng-template>
+  <ng-template #elseTemplate>
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12">
+          <div>
+            <img [srcset]="infoValue.uploadFile[0]!.fileUrl" class="img-view-main" />
+          </div>
+        </ion-col>
+        <ion-col>
+          [center] ion-col
+        </ion-col>
+        <ion-col>
+          [center] ion-col
+        </ion-col>
+        <ion-col>
+          ion-col
+          <br>#
+          <br>#
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+
+
+</ion-content>

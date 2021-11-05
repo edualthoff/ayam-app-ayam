@@ -1,0 +1,25 @@
+.app-prod-lista {
+  height: 150px;
+  width: 150px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  animation: pulse 2s ease-in;
+  ion-img {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+  }
+}
+
+.app-prod-lista-animation {
+
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

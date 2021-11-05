@@ -1,0 +1,32 @@
+
+@use '../../../theme/utils/transitions';
+
+.app-button-icon {
+  transform: rotate(0deg);
+  transition: transitions.fast-out-slow(transform);
+  &.app-b-i-active {
+    transform: rotate(180deg);
+    transition: transitions.fast-out-slow(transform);
+  }
+}
+
+.app-row-slide-icon {
+  overflow-x: auto;
+  flex-flow: nowrap;
+  ion-col{
+    text-align: center;
+    height: 50px;
+    .app-slide-icon {
+      width: 45px;
+      font-size: 22px;
+      ion-label {
+        font-size: 12px;
+      }
+      display: grid;
+      &.bt-active {
+        color: var( --ion-color-secondary);
+
+      }
+    }
+  }
+}

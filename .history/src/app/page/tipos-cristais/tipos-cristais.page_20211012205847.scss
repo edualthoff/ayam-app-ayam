@@ -1,0 +1,12 @@
+.cristal-lista {
+    height: 150px;
+    width: 150px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    ion-img {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+}

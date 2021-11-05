@@ -1,0 +1,51 @@
+<section>
+  <ion-grid style="padding: 0;">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="10">
+        <ion-searchbar animated="true" placeholder="Explorar" inputmode="search" style="padding:0;"></ion-searchbar>
+      </ion-col>
+      <ion-col size="1">
+        <div class="app-button-icon" (click)="buttonCaract = !buttonCaract"
+          [ngClass]="{'app-b-i-active': buttonCaract}">
+          <fa-icon [icon]="['fas', 'angle-double-up']" size="2x"></fa-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Filtro por caracteristica -->
+  <!-- Scrollable Segment -->
+  <ion-segment scrollable value="heart">
+    <ion-segment-button value="home">
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-icon name="pin"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="star">
+      <ion-icon name="star"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="call">
+      <ion-icon name="call"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="globe">
+      <ion-icon name="globe"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="basket">
+      <ion-icon name="basket"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</section>
+
+
+<!--
+
+        <ion-col *ngFor='let caract of caractList; let i = index'>
+        <div class="app-slide-icon" (click)="onClickCarac()" appIconActive>
+          <ion-icon [src]="caract.pathUrlIcon" ></ion-icon>
+          <ion-label>{{caract.nome}}</ion-label>
+        </div>
+      </ion-col>
+-->

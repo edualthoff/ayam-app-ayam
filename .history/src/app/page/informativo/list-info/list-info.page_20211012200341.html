@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Informação</ion-title>
+  </ion-toolbar>
+  <ion-row class="ion-justify-content-center">
+    <ion-col sizeSm="6">
+      <ion-item>
+        <ion-label>Conteudo: </ion-label>
+        <ion-select placeholder="Selecionar" (ionChange)="ionChangeOption(valueOption)" [(ngModel)]="valueOption" interface="popover" okText="Seguir" cancelText="Voltar">
+          <ion-select-option value="">Todos</ion-select-option>
+          <ion-select-option value="noticia">Notícia</ion-select-option>
+          <ion-select-option value="dica">Dica</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+   </ion-row>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="(spinnerLoadService.loading$ | async) || !infoAll; then thenTemplate; else elseTemplate"></ng-container>
+  <ng-template #thenTemplate>
+    <app-spinner-load></app-spinner-load>
+  </ng-template>
+  <ng-template #elseTemplate>
+    <app-informativo-list [infoValue]="infoAll" [routerPath]="'./view'"></app-informativo-list>
+  </ng-template>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Carregando espere…">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

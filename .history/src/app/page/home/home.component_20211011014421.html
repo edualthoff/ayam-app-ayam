@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-thumbnail style="width: 85px; position: relative; left: calc(50% - 40px);">
+      <ion-img [src]="'assets/logo/logo-45.png'"></ion-img>
+    </ion-thumbnail>
+    <!-- <app-buscar-cristal></app-buscar-cristal>
+        <ion-title>Ayam Cristal</ion-title>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8" style="padding-bottom: 0;" class="ion-padding-start">
+          <div style="display: flex; align-items: center; height: 30px;">
+            <span [routerLink]="['./informativo']" routerDirection="forward">
+              <ion-icon name="calendar-outline" style="font-size: 22px;" color="primary"></ion-icon>
+              <h6 style="padding-left: 4px;" >Novidades</h6>
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <!-- Slide de informativo do tipo noticia -->
+        <app-informativo-slide [infoValue]="infoNoticia"></app-informativo-slide>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="11" size-sm="7" size-xl="6">
+          <ion-item color="light" style="border-radius: 10px; --border-style: 0; box-sizing: none;" lines="none"
+            slots="start">
+            <div class="mapear-cristal">
+              <span style="display: flex;">
+                <img [src]="'assets/icon/F10.png'" style="height: 80px;" class="ion-padding-top" />
+                <ion-text color="dark" style="font-size: 12px;">
+                  <p>Sentimos que precisamos de ajuda.
+                    Queremos dar um Up na energia e
+                    não soubemos qual acessórios
+                    terapêuticos de equilíbrio e cura usar.
+                </ion-text>
+              </span>
+              <h6 style="font-size: 14px;">A fadinha te ajuda.</h6>
+              <ion-button expand="block" href="tabs/tab2/">Acura-se. Vamos lá</ion-button>
+            </div>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10" style="padding-bottom: 0;" class="ion-padding-start">
+          <div style="display: flex; align-items: center; height: 30px;">
+            <ion-icon name="heart-circle-outline" style="font-size: 25px;" color="primary"></ion-icon>
+            <h6 style="padding-left: 4px;">Dicas da fadinha</h6>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <!-- Slide de informativo do tipo Dica -->
+        <app-informativo-list [infoValue]="(infoDica$ | async)"></app-informativo-list>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="alinhar-itens-horizonte-centro">
+          <div class="mapear-colecao" style="justify-content: flex-end;">
+            <ion-text color="medium" style="font-size: 12px; padding-top: 6px;">Lista de desejos</ion-text>
+            <b style="align-self: flex-end; padding-bottom: 8px; padding-right: 10px;">0</b>
+          </div>
+        </ion-col>
+        <ion-col class="alinhar-itens-horizonte-centro">
+          <div class="mapear-colecao" style="justify-content: flex-end;">
+            <ion-text color="medium" style="font-size: 12px; padding-top: 6px;">Minha coleção</ion-text>
+            <b style="align-self: flex-end; padding-bottom: 8px; padding-right: 10px;">0</b>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+</ion-content>

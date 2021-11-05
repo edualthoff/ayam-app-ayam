@@ -1,0 +1,8 @@
+
+.app-button-icon {
+  padding-left: 6px;
+  padding-right: 6px;
+  &.app-b-i-active {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" [text]="'Voltar'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Informação</ion-title>
+  </ion-toolbar>
+  <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select placeholder="Select One">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <app-informativo-list [infoValue]="infoAll"></app-informativo-list>
+</ion-content>

@@ -1,0 +1,44 @@
+@use '../../../theme/utils/transitions';
+
+$heigh-campo-icon: 50px;
+
+.app-button-icon {
+  transform: rotate(0deg);
+  transition: transitions.fast-out-slow(transform);
+  &.app-b-i-active {
+    transform: rotate(180deg);
+    transition: transitions.fast-out-slow(transform);
+  }
+}
+
+.app-row-slide-icon {
+  overflow-x: auto;
+  flex-flow: nowrap;
+  ion-col {
+    text-align: center;
+    height: $heigh-campo-icon;
+    max-width: $heigh-campo-icon;
+    .app-slide-icon {
+      justify-items: center;
+      width: 45px;
+      font-size: 22px;
+      display: grid;
+      ion-label {
+        font-size: 9px;
+      }
+      &.bt-active {
+        color: var(--ion-color-secondary) !important;
+        ion-icon {
+          color: var(--ion-color-secondary) !important;
+          fill: var(--ion-color-secondary) !important;
+        }
+      }
+    }
+  }
+}
+
+.ion-infinite-scroll-content {
+  overflow-y: hidden;
+  overflow-x: auto;
+  min-height: $heigh-campo-icon;
+}

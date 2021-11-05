@@ -1,0 +1,7 @@
+
+.app-button-icon {
+  padding-left: 6px;
+  .app-b-i-active {
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
+  }
+}

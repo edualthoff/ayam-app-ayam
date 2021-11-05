@@ -1,0 +1,35 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+      <app-buscar-cristal></app-buscar-cristal>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ng-container *ngIf="(spinnerLoadService.loading$ | async) || !prodll; then thenTemplate; else elseTemplate">
+  </ng-container>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando espere…">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+
+<!-- Spinner loading - enquanto carrega -->
+<ng-template #thenTemplate>
+  <app-spinner-load></app-spinner-load>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <ion-grid>
+    <ion-row>
+        <ion-col size="6" size-sm="3">
+          <div class="app-prod-lista"  routerLink="descricao/12" routerDirection="forward">
+              <ion-img [src]="'assets/img/cristal/Amethyst Stone-nobg2.png'" ></ion-img>
+              <ion-label color="medium">Amethyst</ion-label>
+          </div>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ng-template>

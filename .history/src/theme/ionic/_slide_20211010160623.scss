@@ -1,0 +1,10 @@
+
+.swiper-pagination-bullet {
+  --bullet-background: var(--ion-color-secondary-shade);
+}
+
+.swiper-pagination-custom-bullet {
+  left: 0px;
+  bottom: 20px !important;
+  bottom: calc(env(safe-area-inset-bottom) + 20px) !important;
+  }

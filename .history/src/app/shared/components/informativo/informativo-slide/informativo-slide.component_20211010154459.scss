@@ -1,0 +1,23 @@
+ion-card-header {
+  text-align: start;
+  padding-top: 8px;
+
+  ion-card-title {
+    font-size: 14px;
+  }
+  ion-card-subtitle {
+    font-size: 9px;
+  }
+}
+.swiper-pagination {
+  bottom: 0 !important;
+}
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-size: 13px;
+  text-align: justify;
+}

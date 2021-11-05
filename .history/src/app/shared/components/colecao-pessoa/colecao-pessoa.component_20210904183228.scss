@@ -1,0 +1,10 @@
+.row-colecao {
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: var(--ion-overlay-background-color);
+    & span {
+        display: block;
+        position: absolute;
+        padding-top: 30px;
+    }
+}

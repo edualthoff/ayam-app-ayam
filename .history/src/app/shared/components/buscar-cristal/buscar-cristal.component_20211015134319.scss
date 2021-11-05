@@ -1,0 +1,7 @@
+
+.app-button-icon {
+  &.app-b-i-active {
+    transform: rotate(180deg);
+    transition: transitions.fast-out-slow(transform);
+  }
+}

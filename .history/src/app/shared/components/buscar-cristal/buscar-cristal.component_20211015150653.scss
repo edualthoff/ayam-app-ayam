@@ -1,0 +1,21 @@
+
+@use '../../../theme/utils/transitions';
+
+.app-button-icon {
+  transform: rotate(0deg);
+  transition: transitions.fast-out-slow(transform);
+  &.app-b-i-active {
+    transform: rotate(180deg);
+    transition: transitions.fast-out-slow(transform);
+  }
+}
+
+ion-slides {
+  ion-slide{
+    max-width: 60px !important;
+    .app-slide-icon {
+      font-size: 12px;
+      display: grid;
+    }
+  }
+}

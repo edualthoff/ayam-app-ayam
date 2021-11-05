@@ -1,0 +1,36 @@
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.mapear-cristal{
+    border-radius: 8px;
+    /* box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px; */
+    text-align: center;
+}
+
+.mapear-colecao {
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+    height: 80px;
+    width: 120px;
+    display: flex;
+
+}
+
+ion-card-header {
+  text-align: start;
+  padding-top: 8px;
+
+  ion-card-title {
+    font-size: 14px;
+  }
+  ion-card-subtitle {
+    font-size: 9px;
+  }
+}

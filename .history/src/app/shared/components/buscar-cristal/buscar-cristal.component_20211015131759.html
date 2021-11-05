@@ -1,0 +1,21 @@
+<section>
+  <ion-grid style="padding: 0;">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="10">
+        <ion-searchbar animated="true" placeholder="Explorar" inputmode="search" style="padding:0;"></ion-searchbar>
+      </ion-col>
+      <ion-col size="1">
+        <div class="app-button-icon" (click)="buttonCaract = !buttonCaract">
+          <fa-icon [icon]="['fas', 'angle-double-up']" size="2x"  id="app-b-i"></fa-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ng-container *ngIf="buttonCaract">
+    <div>
+      oiee
+    </div>
+  </ng-container>
+</section>
+
+

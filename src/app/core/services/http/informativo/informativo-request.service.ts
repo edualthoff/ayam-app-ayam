@@ -1,0 +1,74 @@
+import { PaginationResponse } from './../../../interfaces/base.interface';
+import { Informativo } from './../../../interfaces/informativo.interface';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class InformativoRequestService {
+
+  constructor(protected http: HttpClient) {  }
+
+  save(informativo: Informativo): any {
+    return this.http.post('/informativo/', informativo);
+  }
+
+  saveAndFile(informativo: Informativo, file: File[]): Observable<any> {
+    const myheader = new HttpHeaders().set('Accept', 'application/json');
+    const f = new FormData();
+    console.log("save "+ file.length);
+    f.append('informativo', JSON.stringify(informativo));
+    file.forEach( (x: File) => {
+      f.append('file', x);
+    });
+    return this.http.post('/informativo', f, {
+      headers: myheader,
+      reportProgress: true,
+      responseType: 'json'
+    });
+  }
+  updateAndFile(informativo: Informativo, file: File[]): Observable<any> {
+    const myheader = new HttpHeaders().set('Accept', 'application/json');
+    const f = new FormData();
+    f.append('informativo', JSON.stringify(informativo));
+    file.forEach( (x: File) => {
+        f.append('file', x);
+    });
+    return this.http.put('/informativo', f, {
+      headers: myheader,
+      reportProgress: true,
+      responseType: 'json'
+    });
+  }
+
+  update(caract: Informativo): any {
+    return this.http.put('/informativo', caract);
+  }
+
+  findParameterNameOrAll(nome = '', tipo = '', sort = 'asc', page = 0, size = 10): Observable<PaginationResponse<Informativo>>  {
+    const params2 = new HttpParams()
+    .set('nome', nome)
+    .set('tipo', tipo)
+    .set('getFile', true)
+    .set('sort', sort)
+    .set('page', page.toString())
+    .set('size', size.toString());
+    return this.http.get<PaginationResponse<Informativo>>('/informativo/autosuggest', { params: params2 });
+  }
+
+  findById(infoId: number): Observable<Informativo> {
+    return this.http.get<Informativo>(`/informativo/${infoId}`);
+  }
+
+  findAllByTipoAndAtivoResultSetQtd(infoTipo: string, qtdSet: number = 1): Observable<Array<Informativo>> {
+    const params2 = new HttpParams()
+    .set('qtd', qtdSet)
+    return this.http.get<Array<Informativo>>(`/informativo/${infoTipo}/destaque/ativo`, { params: params2 });
+  }
+
+  delete(index: number): any {
+    return this.http.delete(`/informativo/${index}`);
+  }
+}

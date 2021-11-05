@@ -1,0 +1,37 @@
+<section>
+  <ion-grid style="padding: 0;">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="10">
+        <ion-searchbar animated="true" placeholder="Explorar" inputmode="search" style="padding:0;"></ion-searchbar>
+      </ion-col>
+      <ion-col size="1">
+        <div class="app-button-icon" (click)="buttonCaract = !buttonCaract" [ngClass]="{'app-b-i-active': buttonCaract}">
+          <fa-icon [icon]="['fas', 'angle-double-up']" size="2x" ></fa-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ng-container *ngIf="buttonCaract">
+    <div>
+      <ion-list>
+          <!-- Sliding item with text options on both sides -->
+  <ion-item-sliding>
+    <ion-item-options side="start">
+      <ion-item-option (click)="">Favorite</ion-item-option>
+      <ion-item-option color="danger" (click)="">Share</ion-item-option>
+    </ion-item-options>
+
+    <ion-item>
+      <ion-label>Item Options</ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option (click)="">Unread</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+      </ion-list>
+    </div>
+  </ng-container>
+</section>
+
+
