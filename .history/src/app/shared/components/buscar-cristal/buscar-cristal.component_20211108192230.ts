@@ -1,6 +1,7 @@
 import { CaracteristicaProduto } from './../../../core/interfaces/caracteristica.interface';
 import { CaracteristicaRequestService } from './../../../core/services/http/caracteristica/caracteristica-request.service';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-buscar-cristal',
@@ -10,10 +11,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class BuscarCristalComponent implements OnInit {
 
   @Output()
-  select = new EventEmitter<CaracteristicaProduto>();
-
-  @Output()
-  inputValue = new EventEmitter<string>();
+  select = new EventEmitter();
 
   buttonCaract = false;
   caractList: CaracteristicaProduto[] = [];
@@ -29,12 +27,8 @@ export class BuscarCristalComponent implements OnInit {
     return new Array(i);
   }
 
-  onClickCarac(select: CaracteristicaProduto) {
-    this.select.emit(select);
-  }
+  onClickCarac() {
 
-  onInputValue(value: any) {
-    this.inputValue.emit(value.srcElement.value);
   }
 
   private loadCaracteristica() {

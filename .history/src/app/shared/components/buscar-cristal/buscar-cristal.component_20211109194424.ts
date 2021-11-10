@@ -33,8 +33,8 @@ export class BuscarCristalComponent implements OnInit {
     this.select.emit(select);
   }
 
-  onInputValue(value: any) {
-    this.inputValue.emit(value.srcElement.value);
+  onInputValue(value: string) {
+    this.inputValue.emit(value);
   }
 
   private loadCaracteristica() {

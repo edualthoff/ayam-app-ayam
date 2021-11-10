@@ -26,7 +26,7 @@ export class ProdutoRequestService {
 * @param size
 * @returns
 */
-  findParameterCaracteristicaId(idCaracteristica, page = 0, size = 10,  sort = 'asc', ): Observable<PaginationResponse<Produto>> {
+  findParameterCaracteristicaId(idCaracteristica, sort = 'asc', page = 0, size = 10): Observable<PaginationResponse<Produto>> {
     const params2 = new HttpParams()
       .set('sort', sort)
       .set('page', page.toString())

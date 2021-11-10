@@ -11,7 +11,7 @@ export class CaracteristicaRequestService {
 
   private URIDESTINO = 'caracteristica';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {  }
 
   /**  Buscar Tipo Paginacao
    * @param nome
@@ -20,15 +20,14 @@ export class CaracteristicaRequestService {
    * @param size
    * @returns
    */
-  findParameterNameOrAll(nome = '', sort = 'asc', page = 0, size = 10): Observable<PaginationResponse<CaracteristicaProduto>> {
+  findParameterNameOrAll(nome = '', sort = 'asc', page = 0, size = 10): Observable<PaginationResponse<CaracteristicaProduto>>  {
     const params2 = new HttpParams()
-      .set('nome', nome)
-      .set('sort', sort)
-      .set('page', page.toString())
-      .set('size', size.toString());
+    .set('nome', nome)
+    .set('sort', sort)
+    .set('page', page.toString())
+    .set('size', size.toString());
     return this.http.get<PaginationResponse<CaracteristicaProduto>>(`/${this.URIDESTINO}`, { params: params2 });
   }
-
   /** buscar por id */
   findById(idCaract: string): Observable<CaracteristicaProduto> {
     return this.http.get<CaracteristicaProduto>(`/${this.URIDESTINO}/${idCaract}`);

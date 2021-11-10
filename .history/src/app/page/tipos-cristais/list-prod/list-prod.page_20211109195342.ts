@@ -48,6 +48,7 @@ export class ListProdPage implements OnInit {
   }
 
   buscarPorNomeInput(option: String){
+    console.log("aq "+option)
     this.page = 0;
     if(option.length >= 3) {
       this.mountList(option);
@@ -58,15 +59,16 @@ export class ListProdPage implements OnInit {
 
 
   /**
-  *  Infiniti scroll ionic - logica
+  *  Infiniti scro ionic - logica
   * @param event
   */
   loadData(event) {
     setTimeout(() => {
       console.log('Done');
-      // Desabilita o envento do infinit scroll - apoes finalizar
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
       if (this.totalPages == this.page) {
-        event.target.disabled = true;
+        //event.target.disabled = true;
       } else {
         this.mountList(this.valueOption);
       }

@@ -10,10 +10,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class BuscarCristalComponent implements OnInit {
 
   @Output()
-  select = new EventEmitter<CaracteristicaProduto>();
-
-  @Output()
-  inputValue = new EventEmitter<string>();
+  select = new EventEmitter();
 
   buttonCaract = false;
   caractList: CaracteristicaProduto[] = [];
@@ -29,12 +26,8 @@ export class BuscarCristalComponent implements OnInit {
     return new Array(i);
   }
 
-  onClickCarac(select: CaracteristicaProduto) {
-    this.select.emit(select);
-  }
+  onClickCarac() {
 
-  onInputValue(value: any) {
-    this.inputValue.emit(value.srcElement.value);
   }
 
   private loadCaracteristica() {

@@ -15,7 +15,7 @@ export class ListProdPage implements OnInit {
   caracll: CaracteristicaProduto[] = [];
   prodll: Produto[] = [];
   valueOption = '';
-  private page = 0;
+  page = 0;
   private totalPages;
   produto$ = new BehaviorSubject<Produto[]>(null);
 
@@ -43,30 +43,21 @@ export class ListProdPage implements OnInit {
   }
 
   selectCaracteristicaFiltro(select: CaracteristicaProduto){
-    this.page = 0;
     this.mountListPorCaracteristica(select.id);
+    console.log("aq "+select.id+ " "+ JSON.stringify(this.produto$.value))
   }
-
-  buscarPorNomeInput(option: String){
-    this.page = 0;
-    if(option.length >= 3) {
-      this.mountList(option);
-    } else if(option.length === 0) {
-      this.mountList('');
-    }
-  }
-
 
   /**
-  *  Infiniti scroll ionic - logica
+  *  Infiniti scro ionic - logica
   * @param event
   */
   loadData(event) {
     setTimeout(() => {
       console.log('Done');
-      // Desabilita o envento do infinit scroll - apoes finalizar
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
       if (this.totalPages == this.page) {
-        event.target.disabled = true;
+        //event.target.disabled = true;
       } else {
         this.mountList(this.valueOption);
       }

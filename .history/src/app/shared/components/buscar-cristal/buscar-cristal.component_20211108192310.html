@@ -2,8 +2,7 @@
   <ion-grid style="padding: 0;">
     <ion-row class="ion-align-items-center ion-justify-content-center">
       <ion-col size="10">
-        <ion-searchbar animated="true" placeholder="Explorar" inputmode="search" style="padding:0;" debounce="300"
-        (ionChange)="onInputValue($event)"></ion-searchbar>
+        <ion-searchbar animated="true" placeholder="Explorar" inputmode="search" style="padding:0;"></ion-searchbar>
       </ion-col>
       <ion-col size="1">
         <div class="app-button-icon" (click)="buttonCaract = !buttonCaract" [ngClass]="{'app-b-i-active': buttonCaract}">
@@ -15,7 +14,7 @@
   <!-- Filtro por caracteristica - icon e nome - Tipo Vibracao-->
     <ion-row appIconButtonChange class="app-row-slide-icon" [ngClass]="{'app-slide-transition': buttonCaract}">
       <ion-col *ngFor='let caract of caractList; let i = index'>
-        <div class="app-slide-icon" (click)="onClickCarac(caract)" appIconActive>
+        <div class="app-slide-icon" (select)="caract" appIconActive>
           <ion-icon [src]="caract.pathUrlIcon" ></ion-icon>
           <ion-label>{{caract.nome | titlecase }}</ion-label>
         </div>

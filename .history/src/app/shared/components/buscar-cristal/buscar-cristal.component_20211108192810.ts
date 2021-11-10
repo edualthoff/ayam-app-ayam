@@ -12,9 +12,6 @@ export class BuscarCristalComponent implements OnInit {
   @Output()
   select = new EventEmitter<CaracteristicaProduto>();
 
-  @Output()
-  inputValue = new EventEmitter<string>();
-
   buttonCaract = false;
   caractList: CaracteristicaProduto[] = [];
 
@@ -31,10 +28,6 @@ export class BuscarCristalComponent implements OnInit {
 
   onClickCarac(select: CaracteristicaProduto) {
     this.select.emit(select);
-  }
-
-  onInputValue(value: any) {
-    this.inputValue.emit(value.srcElement.value);
   }
 
   private loadCaracteristica() {
