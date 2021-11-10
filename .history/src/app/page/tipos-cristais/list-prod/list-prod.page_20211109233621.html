@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <ng-container *ngIf="!(produto$ | async); then thenTemplate; else elseTemplate">
+  <ng-container *ngIf="produto.length == 0; then thenTemplate; else elseTemplate">
   </ng-container>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
@@ -24,7 +24,7 @@
 <ng-template #elseTemplate>
   <ion-grid>
     <ion-row>
-        <ng-container *ngFor="let item of (produto$ | async)">
+        <ng-container *ngFor="let item of produto">
           <ion-col size="6" size-sm="3">
             <!-- Lista de Produtos -->
             <div class="app-prod-lista" routerLink="descricao/{{item.id}}" routerDirection="forward">

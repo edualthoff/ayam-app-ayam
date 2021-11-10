@@ -14,14 +14,17 @@ import { map } from 'rxjs/operators';
 })
 export class CristalDescricaoComponent implements OnInit {
 
-  prod: Produto;
+  prod$: Observable<Produto>;
 
   constructor(public spinnerLoadService: SpinnerLoadService, private routeSnap: ActivatedRoute, private httpProd: ProdutoRequestService) { }
 
   ngOnInit(): void {
     console.log("tt "+this.routeSnap.snapshot.params['id'])
     this.spinnerLoadService.show();
-    this.httpProd.findById(this.routeSnap.snapshot.params['id']).subscribe(x => { this.prod = x});
+    setTimeout(() => {
+      this.prod$ = this.httpProd.findById(this.routeSnap.snapshot.params['id'])
+      .pipe<Produto>(map( x => this.spinnerLoadService.hide() ));
+    }, 400 );
   }
 
 }

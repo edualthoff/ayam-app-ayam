@@ -18,7 +18,7 @@
     </ion-row>
     <ion-row class="ion-justify-content-center ion-align-self-center">
       <ion-col size="4" class="alinhar-itens-horizonte-centro" *ngFor="let item of prod?.listCaracteristicaProduto">
-        <span style="display: grid; text-align: center; justify-items:center;">
+        <span style="display: grid; text-align: center;">
           <!-- <fa-icon [icon]="['fab', 'react']" style="font-size: 20px;"></fa-icon> -->
           <ion-icon [src]="item.pathUrlIcon" style="font-size: 20px;"></ion-icon>
           <ion-label color="medium" style="font-size: 12px;">{{item.nome}}</ion-label>

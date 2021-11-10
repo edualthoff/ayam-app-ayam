@@ -15,8 +15,8 @@ export class ListProdPage implements OnInit {
   valueOption = '';
   private page = 0;
   private totalPages;
-  private guardSelect;
-  produto$ = new BehaviorSubject<Produto[]>(null);
+  // produto$ = new BehaviorSubject<Produto[]>(null);
+  produto: Produto[] = [];
 
   constructor(public spinnerLoadService: SpinnerLoadService, private httpProduto: ProdutoRequestService) { }
 
@@ -25,38 +25,40 @@ export class ListProdPage implements OnInit {
   }
 
   ionViewDidEnter() {
+    // this.page = 0;
+    console.log("voltou "+this.produto.length)
   }
 
   private mountList(option: any) {
     this.httpProduto.findParameterNameOrAll(option, this.page).subscribe(x => {
       this.page = this.page + 1;
       this.totalPages = x.totalPages;
-      this.produto$.next(x.content);
+      // console.log("aq "+JSON.stringify(x.content))
+      this.produto.push(...x.content);
     });
   }
   private mountListPorCaracteristica(option: any) {
     this.httpProduto.findParameterCaracteristicaId(option, this.page).subscribe(x => {
       this.page = this.page + 1;
       this.totalPages = x.totalPages;
-      this.produto$.next(x.content);
+      // console.log("aq "+JSON.stringify(x.content))
+      this.produto.push(...x.content);
     });
   }
 
   selectCaracteristicaFiltro(select: CaracteristicaProduto){
     this.page = 0;
-    if(this.guardSelect === select.id) {
-      this.mountList(this.valueOption);
-    } else {
-      this.guardSelect = select.id;
-      this.mountListPorCaracteristica(select.id);
-    }
+    this.produto = [];
+    this.mountListPorCaracteristica(select.id);
   }
 
   buscarPorNomeInput(option: String){
     this.page = 0;
     if(option.length >= 3) {
+      this.produto = [];
       this.mountList(option);
     } else if(option.length === 0) {
+      this.produto = [];
       this.mountList(this.valueOption);
     }
   }

@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <ng-container *ngIf="!(produto$ | async); then thenTemplate; else elseTemplate">
+  <ng-container *ngIf="produto$ | async as item; then thenTemplate; else elseTemplate">
   </ng-container>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">

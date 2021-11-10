@@ -15,22 +15,24 @@ export class ListProdPage implements OnInit {
   valueOption = '';
   private page = 0;
   private totalPages;
-  private guardSelect;
   produto$ = new BehaviorSubject<Produto[]>(null);
 
   constructor(public spinnerLoadService: SpinnerLoadService, private httpProduto: ProdutoRequestService) { }
 
   ngOnInit() {
-    this.mountList(this.valueOption);
   }
 
   ionViewDidEnter() {
+    this.page = 0;
+    this.mountList(this.valueOption);
+    console.log("voltou")
   }
 
   private mountList(option: any) {
     this.httpProduto.findParameterNameOrAll(option, this.page).subscribe(x => {
       this.page = this.page + 1;
       this.totalPages = x.totalPages;
+      // console.log("aq "+JSON.stringify(x.content))
       this.produto$.next(x.content);
     });
   }
@@ -38,18 +40,14 @@ export class ListProdPage implements OnInit {
     this.httpProduto.findParameterCaracteristicaId(option, this.page).subscribe(x => {
       this.page = this.page + 1;
       this.totalPages = x.totalPages;
+      // console.log("aq "+JSON.stringify(x.content))
       this.produto$.next(x.content);
     });
   }
 
   selectCaracteristicaFiltro(select: CaracteristicaProduto){
     this.page = 0;
-    if(this.guardSelect === select.id) {
-      this.mountList(this.valueOption);
-    } else {
-      this.guardSelect = select.id;
-      this.mountListPorCaracteristica(select.id);
-    }
+    this.mountListPorCaracteristica(select.id);
   }
 
   buscarPorNomeInput(option: String){
