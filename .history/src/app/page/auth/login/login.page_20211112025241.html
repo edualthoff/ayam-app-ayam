@@ -1,0 +1,91 @@
+<ion-content>
+  <ion-toolbar style="--background: --ion-background-color;" class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" [text]="''" icon="close"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+  <div class="alinhar-itens-horizonte-centro">
+    <section class="section-login">
+      <ion-grid class="alinha-c-vertical">
+        <ion-row class="ion-no-padding ion-no-margin ion-align-items-center ion-justify-content-center">
+          <ion-col class="ion-align-self-center alinhar-itens-horizonte-centro">
+            <img src="./assets/logo/logo2-png.png" height="100px" />
+          </ion-col>
+        </ion-row>
+        <!-- Login -->
+        <form [formGroup]="loginForm">
+          <ion-row class="ion-no-padding ion-no-margin ion-align-items-center ion-justify-content-center">
+            <ion-col style="height: auto;">
+              <ion-item class="app-ion-input-item" fill="outline">
+                <ion-input class="icon-input" formControlName="usuario" autocomplete="on" inputmode="email"
+                  placeholder="Usuario" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                  <ion-icon name="person-outline"></ion-icon>
+                </ion-input>
+              </ion-item>
+              <ion-item class="app-ion-input-item">
+                <ion-input class="icon-input " clear-on-edit="true" formControlName="senha" type="password"
+                  autocomplete="on" inputmode="password" placeholder="Senha" pattern=".{6,}"
+                  title="6 ou mais caracteres">
+                  <ion-icon name="key-outline"></ion-icon>
+                </ion-input>
+              </ion-item>
+              <!-- Botao de Recuperar Senha e Cadastrar -->
+              <div class="recBotao">
+                <ion-button class="recBotao" fill="clear" color="secondary" slot="end" size="small">
+                  Esqueceu sua senha? </ion-button>
+                <!--<ion-button class="r-PaddingBotton cadrecBotao" expand="block" fill="clear" color="secondary" type="submit">
+                Cadastre-se</ion-button>-->
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding ion-no-margin ion-align-items-center ion-justify-content-center"
+            style="height: 90px;">
+            <ion-col>
+              <ion-item lines="none" style="--inner-padding-end: 0;">
+                <div class="loginbotao alinhar-itens-horizonte-centro">
+                  <!-- Botao de Entrar / Logar-->
+                  <ion-button class="loginbotao" expand="block" fill="solid" [disabled]="!loginForm.valid">Entrar
+                  </ion-button>
+                </div>
+              </ion-item>
+              <!-- Botao de Criar uma conta-->
+              <ion-button class="cadastrobotao" fill="clear" size="small" [routerLink]="['../register']"
+                routerLinkActive="router-link-active">
+                <ion-text color="medium" style="margin-right: 7px;">Não tem uma conta? </ion-text> Cadastre-se
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+        <div class="line-created">
+          <div class="line-break"></div>
+          <div class="line-break-text">ou</div>
+          <div class="line-break"></div>
+        </div>
+        <!-- Entrar com as Midias Sociais -->
+        <ion-row class="ion-no-padding ion-no-margin ion-align-items-center ion-justify-content-center">
+          <ion-col size="12">
+            <ion-button class="facebotao" (click)="onFacebookLogin()" size="small">
+              <ion-icon [src]="'assets/icon/midia-social/facebooklogo.svg'"></ion-icon>
+              Entrar com o Facebook
+            </ion-button>
+            <!-- Sessiao com o Google está desabilitado
+          <ion-button class="googlebotao" (click)="onGoogleLogin()">
+            <ion-icon [src]="'assets/icon/midia-social/googlelogo.svg'"></ion-icon>
+            Entrar com o Google
+          </ion-button>-->
+          </ion-col>
+          <ion-col size="12">
+            <ion-text color="medium" class="app-politicas-privacidade">
+              <p>
+                Ao clicar em "Criar uma conta" você concorda com o Ayam <ion-text color="primary">Termos de Uso</ion-text> e com a
+                <ion-text color="primary"> Política de Privacidade</ion-text>.
+              </p>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
+  </div>
+</ion-content>

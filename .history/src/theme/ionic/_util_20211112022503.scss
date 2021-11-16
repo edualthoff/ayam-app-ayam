@@ -1,0 +1,26 @@
+ion-input {
+  font-size: $font-size-base !important;
+  padding-bottom: 5px !important;
+}
+
+ion-label {
+  font-size: $font-size-base !important;
+}
+
+.app-ion-input-item {
+  --inner-padding-start: 10px;
+  --min-height:35px;
+  ion-label {
+    padding-bottom: 5px;
+    font-size: $font-size-base !important;
+  }
+}
+
+.app-ion-input-item.item-has-value {
+
+}
+
+.app-ion-input-padding-rm {
+  --padding-top: 0px !important;
+  --padding-bottom: 7px;
+}

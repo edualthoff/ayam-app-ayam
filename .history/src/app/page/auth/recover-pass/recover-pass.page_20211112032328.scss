@@ -1,0 +1,31 @@
+ion-item::part(native) {
+  //WRITE ALL YOUR CSS RULES HERE
+  padding-left: unset;
+  /** and lots more **/
+}
+
+.section-main {
+  width: 350px;
+}
+
+.app-senha-text {
+  font-size: 14px;
+  text-align: center;
+}
+.botao-main {
+  height: 32px;
+  width: 100%;
+  ion-button {
+    width: 340px;
+  }
+}
+
+.app-politicas-privacidade {
+  text-align: center;
+  font-size: 12px;
+}
+@media only screen and (min-width: 640px) {
+  .section-main {
+    border: 1px solid rgba(219, 219, 219, 1);
+  }
+}

@@ -1,0 +1,38 @@
+
+
+.slide-view {
+}
+.swiper {
+  overflow-y: auto;
+  height: 500px;
+}
+
+.slide-view {
+  height: 100%;
+  text-align: center;
+}
+
+.slide-view  h2 {
+  margin-top: 2.8rem;
+}
+
+.slide-view img {
+  max-width: 50%;
+  margin: 60px 0 40px;
+  pointer-events: none;
+}
+
+b {
+  font-weight: 500;
+}
+
+p {
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ion-color-step-600, #60646b);
+}
+
+p b {
+  color: var(--ion-text-color, #000000);
+}

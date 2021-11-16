@@ -1,0 +1,129 @@
+$input-height-google: 40px;
+
+.label-float-main {
+  position: relative;
+  padding-top: 13px;
+  height: $input-height-google;
+  &.invalid {
+    ion-label {
+      color: #f53d3d !important;
+    }
+    ion-input {
+      border: 2px solid #f53d3d !important;
+    }
+  }
+
+  ion-input  {
+    background-color: transparent;
+    border: 2px solid var(--ion-color-step-250);
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -webkit-appearance: none;
+    &.has-focus {
+      border: 2px solid var(--ion-color-primary);
+    }
+    >input::placeholder {
+      color: transparent;
+    }
+  }
+  .label-floating {
+    font-size: $font-size-base;
+    color: var(--ion-text-color);
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 33px);
+    left: 20px;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    background-color: var(--ion-background-color);
+    padding-top: 5px;
+    margin-left: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+  }
+}
+
+.label-float-main .label-floating + ion-input.has-focus, .label-floating +
+ion-input:not(:placeholder-shown):not(.ion-invalid) {
+  font-size: 13px;
+  top: 0;
+  color: #3951b2;
+}
+.label-float-main .label-floating + ion-input:not(.has-focus):not(.has-value):not(:placeholder-shown):not(.ion-invalid) {
+  font-size: 13px;
+  top: 0;
+  color: var(--ion-text-color);
+}
+
+
+// e
+
+.label-float {
+  position: relative;
+  padding-top: 13px;
+  &.invalid {
+    label {
+      color: #f53d3d !important;
+    }
+    input {
+      border: 2px solid #f53d3d !important;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -webkit-appearance: none;
+    &:focus {
+      border: 2px solid #3951b2;
+    }
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  label {
+    font-size: $font-size-base;
+    color: #fff;
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 20px;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    background-color: #3880ff;
+    padding-top: 5px;
+    margin-left: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+  }
+}
+
+.label-float input:focus + label,
+input:not(:placeholder-shown):not(.invalid) + label {
+  font-size: 13px;
+  top: 0;
+  color: #3951b2;
+}
+.label-float input:not(:focus):not(:placeholder-shown):not(.invalid) + label {
+  font-size: 13px;
+  top: 0;
+  color: #fff;
+}

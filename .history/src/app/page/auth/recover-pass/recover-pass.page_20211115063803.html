@@ -1,0 +1,58 @@
+<ion-content>
+  <ion-toolbar style="--background: --ion-background-color;" class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab1']" routerLinkActive="router-link-active">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
+    <ion-col class="ion-align-self-center alinhar-itens-horizonte-centro">
+      <img src="./assets/logo/logo2-png.png" height="100px" />
+    </ion-col>
+  </ion-row>
+  <div class="app-alinhar-centro">
+    <section class="section-main">
+      <ion-grid class="alinha-c-vertical">
+        <ion-row class="ion-padding">
+          <ion-col size="12">
+            <ion-title class="ion-no-padding">Esqueceu sua senha?</ion-title>
+          </ion-col>
+          <ion-col size="12">
+            <ion-text color="dark" class="app-senha-text">
+              <p>
+               Insira o seu endereço de e-mail para enviarmos um link de redefinição de senha.
+              </p>
+            </ion-text>
+          </ion-col>
+          <ion-col size="12">
+            <form [formGroup]="form">
+              <div class="label-floating-google ion-margin-vertical">
+                <ion-input formControlName="email" type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="off" inputmode="email" title="Inserir o e-mail de registro"></ion-input>
+                <ion-label >E-mail*</ion-label>
+              </div>
+              <ion-item lines="none" style="--inner-padding-end: 0; padding-top: 20px;">
+                <div class="botao-main alinhar-itens-horizonte-centro">
+                  <!-- Botao de Entrar / Logar-->
+                  <ion-button expand="block" fill="solid" [disabled]="!form.valid">Enviar link de redefinição de senha </ion-button>
+                </div>
+              </ion-item>
+            </form>
+          </ion-col>
+          <ion-col size="12">
+            <ion-text color="medium" class="app-politicas-privacidade">
+              <p>
+                Ao clicar em "Enviar link de redefinição de senha" você concorda com o Ayam <ion-text color="primary">Termos de Uso</ion-text> e com a
+                <ion-text color="primary"> Política de Privacidade</ion-text>.
+              </p>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
+  </div>
+</ion-content>

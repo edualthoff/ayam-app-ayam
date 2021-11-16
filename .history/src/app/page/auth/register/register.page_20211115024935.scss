@@ -1,0 +1,38 @@
+
+ion-item::part(native) {
+  //WRITE ALL YOUR CSS RULES HERE
+  padding-left: unset;
+  /** and lots more **/
+}
+ion-item.item-has-focus {
+  ion-label.label-floating {
+      padding: 0px 5px;
+      margin-top: -22px;
+      background: var(--ion-color-light);
+      color: var(--ion-color-danger);
+      position: fixed;
+  }
+}
+.section-register {
+  width: 350px;
+}
+
+.botao-register {
+  width: 100%;
+  ion-button {
+    height: 32px;
+    width: 340px;
+  }
+}
+
+.app-politicas-privacidade {
+  p {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .section-register {
+    border: 1px solid rgba(219,219,219,1);
+  }
+}

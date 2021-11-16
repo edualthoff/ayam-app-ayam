@@ -1,0 +1,74 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" [text]="''"></ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header >
+
+<ion-content center text-center>
+<section >
+  <ion-grid no-padding no-margin class="alinha-c-vertical">
+    <ion-row class="no-padding no-margin align-items-center justify-content-center">
+      <ion-col class="ion-align-self-center alinhar-itens-horizonte-centro">
+          <img src="./assets/logo/logo2-png.png" height="100px"/>
+      </ion-col>
+    </ion-row>
+    <!-- Login -->
+    <ion-row no-padding no-margin align-items-center justify-content-center>
+      <ion-col size="11" size-md="8" align-self-center style="height: auto;">
+      <form [formGroup]="loginForm">
+        <ion-item no-padding class="margin-top-8">
+          <ion-input formControlName="usuario" no-padding autocomplete="on"
+            inputmode="email" pattern="email" placeholder="Usuario" type="email">
+            <ion-icon class="padding-left-8 padding-right-8"name="person-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <ion-item no-padding class="margin-top-8 border-radius-10px">
+          <ion-input clear-on-edit="true" formControlName="senha" no-padding type="password"
+            autocomplete="on" inputmode="password" pattern="password" placeholder="Senha">
+            <ion-icon class="padding-left-8 padding-right-8" name="key-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <!-- Botao de Entrar / Logar-->
+        <ion-item no-padding lines="none" >
+          <div class="loginbotao margin-top-20">
+            <ion-button  class="r-PaddingBotton align-v-meio loginbotao" expand="block" fill="clear"
+            color="secondary">Entrar</ion-button>
+            <hr no-padding class="linhaHr">
+              <!-- Botao de Recuperar Senha e Cadastrar -->
+            <div class="recBotao">
+              <ion-button class="r-PaddingBotton recBotao" expand="block" fill="clear" color="secondary" >
+                Esqueceu sua senha? </ion-button>
+                <!--<ion-button class="r-PaddingBotton cadrecBotao" expand="block" fill="clear" color="secondary" type="submit">
+                  Cadastre-se</ion-button>-->
+            </div>
+          </div>
+        </ion-item>
+      </form>
+      </ion-col>
+    </ion-row>
+    <!-- Entrar com as Midias Sociais -->
+    <ion-row no-padding class="margin-top-40" align-items-center justify-content-center>
+      <ion-col size="12" size-md="7" size-sm="7" >
+          <ion-button class="facebotao" (click)="onFacebookLogin()">
+            <ion-icon [src]="'assets/icon/midia-social/facebooklogo.svg'"></ion-icon>
+            Entrar com o Facebook
+          </ion-button>
+          <ion-button class="googlebotao" (click)="onGoogleLogin()">
+            <ion-icon [src]="'assets/icon/midia-social/googlelogo.svg'"></ion-icon>
+            Entrar com o Google
+          </ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- Botao Cadastro-->
+  </ion-grid>
+</section>
+<ion-button class="cadastrobotao" fill="clear" size="small" (click)="buttonCadastrar()">
+  <ion-text color="medium" style="margin-right: 7px;">Não tem uma conta? </ion-text> Criar uma conta
+</ion-button>
+</ion-content>

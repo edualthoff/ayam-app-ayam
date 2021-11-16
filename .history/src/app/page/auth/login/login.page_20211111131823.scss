@@ -1,0 +1,69 @@
+.facebotao {
+  --background: #0095f6;
+  --border-radius: 5px;
+  --vertical-align: middle;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --background-focused: #3b5998;
+  --background-activated: #3b5998;
+  min-width: -webkit-fill-available;
+  height: 32px;
+  &:active {
+    opacity: 0.8;
+  }
+  ion-icon {
+    position: absolute;
+    left: 25px;
+    fill: white;
+  }
+}
+.icon-input {
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+ion-item::part(native) {
+  //WRITE ALL YOUR CSS RULES HERE
+  padding-left: unset;
+  /** and lots more **/
+}
+.googlebotao {
+  --background: #4c89e3;
+  --border-radius: 8px;
+  --vertical-align: middle;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --background-focused: #4c89e3;
+  --background-activated: #4c89e3;
+  min-width: -webkit-fill-available;
+  height: 40px;
+  &:active {
+    opacity: 0.9;
+  }
+  ion-icon {
+    position: absolute;
+    left: 25px;
+    fill: white;
+  }
+}
+.loginbotao {
+  height: 30px;
+  width: 100%;
+  ion-button {
+    width: 270px;
+  }
+}
+.recBotao {
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+  font-size: 0.7rem;
+  width: auto;
+  --padding-end: 0;
+}
+.cadastrobotao {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 40px;
+}
+

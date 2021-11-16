@@ -1,0 +1,10 @@
+@import "./_slide.scss";
+@import "./_icon.scss";
+@import "./_align.scss";
+
+/** Slide swiper */
+@import 'swiper/css/bundle';
+@import 'swiper/css';
+.swiper-pagination-bullet-active {
+  background-color: var( --ion-color-primary);
+}

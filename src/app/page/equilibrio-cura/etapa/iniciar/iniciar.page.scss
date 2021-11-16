@@ -1,0 +1,20 @@
+.swiper {
+  overflow-y: auto;
+  height: 500px;
+}
+
+.slide-view {
+  height: 100%;
+  text-align: center;
+}
+
+.slide-view  h2 {
+  margin-top: 2.8rem;
+}
+
+.slide-view img {
+  max-height: 100px;
+  margin: 60px 0 40px;
+  pointer-events: none;
+}
+
