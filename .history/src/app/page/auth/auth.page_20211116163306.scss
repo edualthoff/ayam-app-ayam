@@ -1,0 +1,45 @@
+ion-item::part(native) {
+  //WRITE ALL YOUR CSS RULES HERE
+  padding-left: unset;
+  /** and lots more **/
+}
+
+.section-main {
+  width: 350px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 15px;
+  #app-row-outlet {
+    height: max-content;
+    position: relative;
+    ion-router-outlet {
+      position: relative;
+    }
+  }
+  #app-politicas-privacidade {
+    height: 100px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.app-senha-text {
+  font-size: 14px;
+  text-align: center;
+}
+.botao-main {
+  width: 100%;
+  ion-button {
+    height: 32px;
+    width: 340px;
+  }
+}
+
+
+
+@media only screen and (min-width: 640px) {
+  .section-main {
+    border: 1px solid rgba(219, 219, 219, 1);
+  }
+}

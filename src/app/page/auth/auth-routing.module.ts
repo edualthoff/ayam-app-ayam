@@ -20,11 +20,19 @@ const routes: Routes = [
         loadChildren: () => import('./recover-pass/recover-pass.module').then( m => m.RecoverPassPageModule)
       },
       {
+        path: 'new-pass',
+        loadChildren: () => import('./new-pass/new-pass.module').then( m => m.NewPassPageModule)
+      },
+      {
         path: '**',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: 'layout',
+    loadChildren: () => import('./layout/layout.module').then( m => m.LayoutPageModule)
   },
 ];
 

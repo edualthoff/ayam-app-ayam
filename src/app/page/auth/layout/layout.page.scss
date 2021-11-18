@@ -1,0 +1,37 @@
+ion-item::part(native) {
+  //WRITE ALL YOUR CSS RULES HERE
+  padding-left: unset;
+  /** and lots more **/
+}
+
+.section-main {
+  width: 350px;
+  // height: 100%;
+  display: grid;
+  // grid-template-rows: 130px repeat(auto-fill, calc(100%)) 100px;
+  // grid-template-rows: 130px repeat(auto-fit, [app-row-outlet] 100%) 100px;
+  row-gap: 15px;
+  #app-row-outlet {
+    // height: 100%;
+    position: relative;
+    ion-router-outlet {
+      position: unset;
+      .ion-page {
+        contain: unset !important;
+        position: unset !important;
+      }
+    }
+  }
+  #app-politicas-privacidade {
+    height: 100px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+
+@media only screen and (min-width: 640px) {
+  .section-main {
+    border: 1px solid rgba(219, 219, 219, 1);
+  }
+}

@@ -1,0 +1,34 @@
+<ion-grid>
+  <ion-row class="ion-padding">
+    <ion-col size="12">
+      <ion-title class="ion-no-padding">Esqueceu sua senha?</ion-title>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text color="dark" class="app-senha-text">
+        <p>
+          Insira o seu endereço de e-mail para enviarmos um link de redefinição de senha.
+        </p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <form [formGroup]="form">
+        <div class="label-floating-google ion-margin-vertical">
+          <ion-input formControlName="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            autocomplete="off" inputmode="email" title="Inserir o e-mail de registro">
+            <ion-icon name="mail-outline"></ion-icon>
+          </ion-input>
+          <ion-label>E-mail*</ion-label>
+        </div>
+        <ion-item lines="none" style="--inner-padding-end: 0; padding-top: 20px;">
+          <div class="botao-main alinhar-itens-horizonte-centro">
+            <!-- Botao de Entrar / Logar-->
+            <ion-button expand="block" fill="solid" [disabled]="!form.valid" (click)="buttoRecovery()">Enviar link de
+              redefinição de senha </ion-button>
+          </div>
+        </ion-item>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>

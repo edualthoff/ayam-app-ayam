@@ -1,0 +1,93 @@
+<ion-content>
+  <ion-toolbar style="--background: --ion-background-color;" class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/auth/login" [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab1']" routerLinkActive="router-link-active">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
+    <ion-col class="ion-align-self-center alinhar-itens-horizonte-centro">
+      <img src="./assets/logo/logo2-png.png" height="100px" />
+    </ion-col>
+  </ion-row>
+  <div class="app-alinhar-centro">
+    <section class="section-register">
+      <ion-grid class="alinha-c-vertical">
+        <ion-row class="ion-padding">
+          <ion-col>
+            <ion-title>Cadastre-se</ion-title>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="form">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-align-self-center">
+              <div class="label-floating-google ion-margin-vertical">
+                <ion-input formControlName="nome" type="text" autocomplete="off" inputmode="text"
+                  title="Inserir o nome"></ion-input>
+                <ion-label>Nome*</ion-label>
+              </div>
+              <div class="label-floating-google ion-margin-vertical">
+                <ion-input formControlName="sobrenome" type="text" autocomplete="off" inputmode="text"
+                  title="Inserir sobrenome"></ion-input>
+                <ion-label>Sobrenome*</ion-label>
+              </div>
+              <div class="label-floating-google ion-margin-vertical">
+                <ion-input formControlName="telefone" type="tel" maxlength="15"
+                  pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" autocomplete="off" inputmode="tel"
+                  title="Inserir Telefone" appMaskIonInput="phone"></ion-input>
+                <ion-label>Telefone*</ion-label>
+              </div>
+              <!-- Sexo -->
+              <div class="label-select-option-google">
+                <ion-select placeholder="Selecione o sexo" okText="Confirmar" cancelText="Cancelar"
+                  [interfaceOptions]="{header:'Sexo'}" interface="alert" formControlName="genero">
+                  <ion-select-option value="f">Feminino</ion-select-option>
+                  <ion-select-option value="m">Masculino</ion-select-option>
+                </ion-select>
+                <ion-label>Sexo:*</ion-label>
+              </div>
+              <!-- Endereço de e-mail -->
+              <div class="label-floating-google ion-margin-vertical">
+                <ion-input formControlName="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  autocomplete="off" inputmode="email" title="Inserir um e-mail"></ion-input>
+                <ion-label>Endereço de e-mail*</ion-label>
+              </div>
+              <!-- Senha -->
+              <div class="label-floating-google ion-margin-vertical">
+                <ion-input formControlName="senha" type="password" pattern=".{6,}" autocomplete="off"
+                  inputmode="password" title="Inserir uma senha de acesso com 6 ou mais caracteres"></ion-input>
+                <ion-label>Senha*</ion-label>
+                <ion-text color="danger"><span style="margin-left: 5px; font-size: 12px;">
+                  <ion-icon name="chevron-back-circle"></ion-icon>
+                  6 caracteres*</span>
+                </ion-text>
+              </div>
+              <!-- botao registrar -->
+              <ion-item lines="none"class="app-botao-register">
+                <!-- Botao de Entrar / Logar-->
+                <ion-button expand="block" fill="solid" [disabled]="!form.valid" (click)="buttonSave()">Criar uma conta
+                </ion-button>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </form>
+        <ion-row>
+          <ion-col size="12">
+            <!-- Política de Privacidade -->
+            <ion-text color="medium" class="app-politicas-privacidade">
+              <p>
+                Ao clicar em "Criar uma conta" você concorda com o Ayam <ion-text color="primary">Termos de Uso
+                </ion-text> e com a
+                <ion-text color="primary"> Política de Privacidade</ion-text>.
+              </p>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
+  </div>
+</ion-content>

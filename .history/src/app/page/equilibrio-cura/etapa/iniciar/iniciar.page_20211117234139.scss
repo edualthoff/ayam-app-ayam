@@ -1,0 +1,22 @@
+.swiper {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.slide-view {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-view  h2 {
+  margin-top: 2.8rem;
+}
+
+.slide-view img {
+  max-height: 100px;
+  margin: 60px 0 40px;
+  pointer-events: none;
+}
+

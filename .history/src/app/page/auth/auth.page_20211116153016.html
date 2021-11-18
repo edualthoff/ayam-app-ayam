@@ -1,0 +1,36 @@
+<ion-toolbar style="--background: --ion-background-color;" class="ion-no-border">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/auth/login/" [text]="''"></ion-back-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button [routerLink]="['/tabs/tab1']" routerLinkActive="router-link-active">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <div class="app-alinhar-centro">
+    <ion-grid class="alinha-c-vertical section-main">
+      <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
+        <ion-col class="ion-align-self-center alinhar-itens-horizonte-centro" size="12">
+          <img src="./assets/logo/logo2-png.png" height="100px" />
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding">
+        <ion-col size="12">
+          <ion-router-outlet></ion-router-outlet>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12">
+          <ion-text color="medium" class="app-politicas-privacidade">
+            <p>
+              Ao prosseguir você concorda com o Ayam <ion-text color="primary">Termos de Uso</ion-text> e com a
+              <ion-text color="primary"> Política de Privacidade</ion-text>.
+            </p>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

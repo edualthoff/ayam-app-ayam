@@ -1,0 +1,17 @@
+
+ion-item::part(native) {
+  //WRITE ALL YOUR CSS RULES HERE
+  padding-left: unset;
+}
+
+.app-botao-register {
+  --inner-padding-end: 0;
+  padding-top: 30px;
+  display: grid;
+  justify-content: center;
+  ion-button {
+    height: 32px;
+    width: 270px;
+  }
+}
+

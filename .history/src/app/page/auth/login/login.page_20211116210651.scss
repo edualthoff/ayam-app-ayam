@@ -1,0 +1,127 @@
+
+.app-error-value {
+  height: 0;
+  border: 1px var(--ion-color-danger) solid;
+  border-radius: 5px;
+  font-size: 12px;
+  padding-left: 10px;
+  transform: translateX(100%) height;
+  transition: all 500ms;
+  ion-text {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.app-error-anime {
+  height: 100%;
+  transform: translateX(0) height;
+  transition: all 500ms;
+}
+
+.facebotao {
+  --background: #3b5998;
+  --border-radius: 5px;
+  --vertical-align: middle;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --background-focused: #3b5998;
+  --background-activated: #3b5998;
+  min-width: -webkit-fill-available;
+  height: 32px;
+  &:active {
+    opacity: 0.8;
+  }
+  ion-icon {
+    position: absolute;
+    left: 25px;
+    fill: white;
+  }
+}
+
+.googlebotao {
+  --background: #4c89e3;
+  --border-radius: 8px;
+  --vertical-align: middle;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --background-focused: #4c89e3;
+  --background-activated: #4c89e3;
+  min-width: -webkit-fill-available;
+  height: 40px;
+  &:active {
+    opacity: 0.9;
+  }
+  ion-icon {
+    position: absolute;
+    left: 25px;
+    fill: white;
+  }
+}
+.loginbotao {
+  width: 100%;
+  ion-button {
+    height: 32px;
+    width: 270px;
+  }
+}
+.recBotao {
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+  font-size: 0.7rem;
+  width: auto;
+  --padding-end: 0;
+}
+.cadastrobotao {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 40px;
+}
+
+.line-created {
+  -webkit-text-size-adjust: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  padding: 0;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  margin: 14px 40px 22px;
+}
+
+.line-break {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: var(--ion-color-step-250);
+  height: 1px;
+  position: relative;
+  top: 0.45em;
+}
+.line-break-text {
+  color: var(--ion-text-color);
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 18px;
+  text-transform: uppercase;
+}
+
