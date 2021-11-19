@@ -1,0 +1,56 @@
+
+<!-- Component social media button-->
+<div class="app-social-media-main">
+  <ng-container *ngFor="let item of options">
+    <ng-container [ngTemplateOutlet]="this[item.name]" [ngTemplateOutletContext]="{ $implicit: item}">
+    </ng-container>
+  </ng-container>
+</div>
+
+
+<!-- instagram icon -->
+<ng-template #instagram let-option>
+  <ng-container *ngIf="option.square; else elseTemplate">
+    <span >
+      <a href="{{option?.url}}" target="_blank">
+        <fa-icon [icon]="['fab', 'instagram-square']" size="2x" [ngStyle]="{'color': option.color}" ></fa-icon>
+      </a>
+    </span>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <span>
+      <a href="{{option?.url}}">
+        <fa-icon [icon]="['fab', 'instagram']" size="2x" [ngStyle]="{'color': option.color}"></fa-icon>
+      </a>
+    </span>
+  </ng-template>
+</ng-template>
+
+<!-- Facebook icon -->
+<ng-template #facebook let-option>
+  <ng-container *ngIf="option.square; else elseTemplate">
+    <span>
+      <fa-icon [icon]="['fab', 'facebook-square']" size="2x" [ngStyle]="{'color': option.color}"></fa-icon>
+    </span>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <span>
+      <fa-icon [icon]="['fab', 'facebook']" size="2x" [ngStyle]="{'color': option.color}"></fa-icon>
+    </span>
+  </ng-template>
+</ng-template>
+
+<!-- whatsapp icon -->
+<ng-template #whatsapp let-option>
+  <ng-container *ngIf="option.square; else elseTemplate">
+    <span>
+      <fa-icon [icon]="['fab', 'whatsapp-square']" size="2x" [ngStyle]="{'color': option.color}"></fa-icon>
+    </span>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <span>
+      <fa-icon [icon]="['fab', 'whatsapp']" size="2x" [ngStyle]="{'color': option.color}"></fa-icon>
+    </span>
+  </ng-template>
+</ng-template>
+

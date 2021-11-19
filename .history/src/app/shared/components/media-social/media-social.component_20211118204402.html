@@ -1,0 +1,39 @@
+<p>oii</p>
+
+<div class="app-social-media-main">
+  <ng-container *ngFor="let item of options">
+    <ng-container [ngTemplateOutlet]="this[item.name]" [ngTemplateOutletContext]="{ $implicit: item}">
+    </ng-container>
+  </ng-container>
+</div>
+
+
+
+<ng-template #instagram let-option>
+    <span *ngIf="option">
+      <fa-icon [icon]="['fab', 'instagram']" size="2x" [ngStyle]="{'color': '#C13584'}"></fa-icon>
+    </span>
+    <span *ngIf="option">
+      <fa-icon [icon]="['fab', 'instagram-square']" size="2x" [ngStyle]="{'color': '#C13584'}"></fa-icon>
+    </span>
+</ng-template>
+
+<ng-template #facebook let-option>
+    <span>
+      <fa-icon [icon]="['fab', 'facebook-square']" size="2x" [ngStyle]="{'color': '#3b5998'}"></fa-icon>
+    </span>
+    <span>
+      <fa-icon [icon]="['fab', 'facebook']" size="2x" [ngStyle]="{'color': 'unset'}"></fa-icon>
+    </span>
+</ng-template>
+
+
+<ng-template #whatsapp let-option>
+    <span>
+      <fa-icon [icon]="['fab', 'whatsapp-square']" size="2x" [ngStyle]="{'color': '#075E54'}"></fa-icon>
+    </span>
+    <span>
+      <fa-icon [icon]="['fab', 'whatsapp']" size="2x" [ngStyle]="{'color': '#075E54'}"></fa-icon>
+    </span>
+</ng-template>
+

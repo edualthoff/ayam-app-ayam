@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="tabs/tab3"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minha Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <app-user></app-user>
+  <div>
+    <ion-list button inset="true">
+      <ion-item detail="true" lines="full">
+        <ion-icon name="aperture-outline"></ion-icon>
+        <ion-label>
+          <h3>Sugestões</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item detail="true"  lines="full">
+        <ion-icon name="aperture-outline"></ion-icon>
+        <ion-label>
+          <h3>Sugestões</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item detail="true" lines="full">
+        <ion-icon name="aperture-outline"></ion-icon>
+        <ion-label>
+          <h3>Sugestões</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item detail="true"lines="full">
+        <ion-icon name="aperture-outline"></ion-icon>
+        <ion-label>
+          <h3>Sugestões</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item detail="true"lines="full">
+        <ion-icon name="aperture-outline"></ion-icon>
+        <ion-label>
+          <h3>Sugestões</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <app-media-social [options]="[{name: 'whatsapp'}, {name: 'instagram'}, {name: 'facebook'}]"></app-media-social>
+</ion-content>

@@ -1,0 +1,32 @@
+<p>oii</p>
+<ng-container *ngTemplateOutlet="default"></ng-container>
+
+<ng-template #square>
+  <div class="app-social-media-main">
+    <span>
+      <fa-icon [icon]="['fab', 'facebook-square']" size="2x" [ngStyle]="{'color': '#3b5998'}"></fa-icon>
+    </span>
+    <span>
+      <fa-icon [icon]="['fab', 'instagram-square']" size="2x" [ngStyle]="{'color': '#C13584'}"></fa-icon>
+    </span>
+    <span>
+      <fa-icon [icon]="['fab', 'whatsapp-square']" size="2x" [ngStyle]="{'color': '#075E54'}"></fa-icon>
+    </span>
+  </div>
+</ng-template>
+
+
+<ng-template #default>
+  <div class="app-social-media-main">
+    <span>
+      <fa-icon [icon]="['fab', 'facebook']" size="2x" [ngStyle]="{'color': 'unset'}"></fa-icon>
+    </span>
+    <span>
+      <fa-icon [icon]="['fab', 'instagram']" size="2x" [ngStyle]="{'color': '#C13584'}"></fa-icon>
+    </span>
+    <span>
+      <fa-icon [icon]="['fab', 'whatsapp']" size="2x" [ngStyle]="{'color': '#075E54'}"></fa-icon>
+    </span>
+  </div>
+</ng-template>
+

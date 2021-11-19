@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="tabs/tab3"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minha Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <app-user></app-user>
+  <app-media-social [options]="[{name: 'whatsapp'}, {name: 'instagram'}, {name: 'facebook'}]"></app-media-social>
+</ion-content>

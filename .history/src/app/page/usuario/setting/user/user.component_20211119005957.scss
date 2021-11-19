@@ -1,0 +1,13 @@
+.app-user-view {
+  display: grid;
+  grid-template-columns: 50px 250px;
+  margin: 20px;
+  .app-user-view-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: center;
+    gap: 2px;
+    font-size: 12px;
+  }
+}
