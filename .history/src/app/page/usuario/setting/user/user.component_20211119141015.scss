@@ -1,0 +1,19 @@
+.app-user-view {
+  display: grid;
+  grid-template-columns: 50px 250px;
+  margin: 20px;
+  ion-avatar {
+    height: 40px;
+    width: 40px;
+  }
+  .app-user-view-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: center;
+    gap: 2px;
+    > ion-label {
+      font-weight: 600;
+    }
+  }
+}

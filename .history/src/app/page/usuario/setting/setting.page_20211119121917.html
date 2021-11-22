@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="tabs/tab3"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minha Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <app-user></app-user>
+  <div>
+    <ion-list lines="full" class="app-list-menu-setting dark">
+      <ion-item button detail="true" lines="full">
+        <ion-icon name="aperture-outline" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Sugestões</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item button detail="true" lines="full">
+        <ion-icon name="aperture-outline" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Políticas de Privacidade</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item button detail="true" lines="full">
+        <ion-icon name="aperture-outline" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Termos de uso</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item button detail="true" lines="full">
+        <ion-icon name="aperture-outline" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Avaliar o aplicativo</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div>
+
+  </div>
+
+
+  <div class="ion-margin app-footer-settings">
+    <ion-label color="dark">
+      <h3>Siga-nos nas redes sociais.</h3>
+    </ion-label>
+    <app-media-social [options]="[{name: 'whatsapp'}, {name: 'instagram'}, {name: 'facebook'}]"></app-media-social>
+    <div id="app-politicas-privacidade">
+      <ion-text color="medium">
+        Todos os direitos reservados. Nosso <ion-text color="primary">Termos de Uso</ion-text> e
+        <ion-text color="primary"> Política de Privacidade</ion-text>.
+      </ion-text>
+    </div>
+  </div>
+</ion-content>
