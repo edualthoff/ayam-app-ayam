@@ -8,10 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  private screenOrientation: ScreenOrientation;
-
-  constructor() {
-    // this.blockRotationView();
+  constructor(private screenOrientation: ScreenOrientation) {
+    this.blockRotationView();
   }
 
 

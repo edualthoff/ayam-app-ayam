@@ -14,33 +14,31 @@
   <ion-row>
     <ion-col size="12">
       <form [formGroup]="form">
-        <!-- Formulario - input senha -->
         <div class="label-floating-google ion-margin-vertical">
           <ion-input formControlName="senha" type="password" pattern=".{6,}" autocomplete="off" inputmode="password"
-            title="Inserir uma nova senha de acesso com 6 ou mais caracteres" aria-label="Informe a nova senha">
+            title="Inserir uma nova senha de acesso com 6 ou mais caracteres">
             <ion-icon name="key-outline"></ion-icon>
           </ion-input>
           <ion-label>Nova senha*</ion-label>
         </div>
         <ion-text color="tertiary"><span style="margin-left: 5px; margin-top: 4px; font-size: 12px;"
-            class="alinhar-itens-vertical-centro">
-            <ion-icon name="ellipse" style="fill: var(--ion-color-tertiary); font-size: 8px; margin-right: 3px;">
-            </ion-icon>
-            6 caracteres<ion-text color="danger">*</ion-text>
-          </span>
-        </ion-text>
-        <!-- input repetir senha -->
+          class="alinhar-itens-vertical-centro">
+          <ion-icon name="ellipse" style="fill: var(--ion-color-tertiary); font-size: 8px; margin-right: 3px;">
+          </ion-icon>
+          6 caracteres<ion-text color="danger">*</ion-text>
+        </span>
+      </ion-text>
         <div class="label-floating-google">
-          <ion-input formControlName="senhaRepetir" type="password" pattern=".{6,}" autocomplete="off"
-            inputmode="password" title="Inserir uma nova senha de acesso com 6 ou mais caracteres" aria-label="Repeir nova senha">
+          <ion-input formControlName="senhaRepetir" type="password" pattern=".{6,}" autocomplete="off" inputmode="password"
+            title="Inserir uma nova senha de acesso com 6 ou mais caracteres">
             <ion-icon name="key-outline"></ion-icon>
           </ion-input>
           <ion-label>Repetir nova senha*</ion-label>
         </div>
         <ion-item lines="none" style="--inner-padding-end: 0; padding-top: 40px;">
-          <div class="botao-main alinhar-itens-horizonte-centro">
+          <div class="botao-main alinhar-itens-horizonte-centro" >
             <!-- Botao de Entrar / Logar-->
-            <ion-button expand="block" fill="solid" [disabled]="!form.valid" (click)="buttoRecovery()">
+            <ion-button expand="block" fill="solid" [disabled]="true" (click)="buttoRecovery()">
               Alterar senha</ion-button>
           </div>
         </ion-item>

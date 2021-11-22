@@ -11,7 +11,7 @@ export class AppComponent {
   private screenOrientation: ScreenOrientation;
 
   constructor() {
-    // this.blockRotationView();
+    this.blockRotationView();
   }
 
 

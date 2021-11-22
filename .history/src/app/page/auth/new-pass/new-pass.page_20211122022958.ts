@@ -28,7 +28,7 @@ export class NewPassPage implements OnInit {
   private creatForm(){
     this.form = this.formBuilder.group({
       senha: ['', [Validators.required, Validators.minLength(6)]],
-      senhaRepetir: ['', [Validators.required]],
+      senhaRepetir: ['',],
     }, {validators: formsEqualValueValidators('senha', 'senhaRepetir')});
   }
 

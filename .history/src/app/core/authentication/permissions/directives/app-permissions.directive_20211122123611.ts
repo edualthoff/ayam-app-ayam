@@ -5,7 +5,7 @@ import { skip, take } from 'rxjs/operators';
 import { isBoolean, notEmptyValue } from 'src/app/core/utils/helpers';
 
 
-/** Directiva para mostrar ou remover template baseado nas roles do sistema
+/**
  * Diretiva estrutural utilizar caracter coringa(*)
  * --- ----- -----
  * Pega o atributo informado (role - name) e verifica se existe caso sim, remove ou apresenta o template

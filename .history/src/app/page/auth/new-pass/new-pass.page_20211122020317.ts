@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { formsEqualValueValidators } from 'src/app/core/utils/forms';
 
 @Component({
   selector: 'app-new-pass',
@@ -27,9 +26,11 @@ export class NewPassPage implements OnInit {
 
   private creatForm(){
     this.form = this.formBuilder.group({
-      senha: ['', [Validators.required, Validators.minLength(6)]],
+      senha: ['', [Validators.required]],
       senhaRepetir: ['', [Validators.required]],
-    }, {validators: formsEqualValueValidators('senha', 'senhaRepetir')});
+
+
+    });
   }
 
   buttoRecovery() {

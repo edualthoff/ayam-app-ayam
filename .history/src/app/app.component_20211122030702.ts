@@ -1,5 +1,5 @@
-import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { Component } from '@angular/core';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  private screenOrientation: ScreenOrientation;
-
-  constructor() {
-    // this.blockRotationView();
+  constructor(private screenOrientation: ScreenOrientation) {
+    this.blockRotationView();
   }
 
 
