@@ -1,0 +1,10 @@
+.text-llipsis-2line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: horizontal;
+  font-size: 13px;
+  text-align: justify;
+}

@@ -1,0 +1,11 @@
+{
+	"appId": "com.ayam.app",
+	"appName": "app-ayam",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"server": {
+		"hostname": "10.0.0.102",
+		"cleartext": true,
+		"url": "http://10.0.0.102:8100"
+	}
+}
