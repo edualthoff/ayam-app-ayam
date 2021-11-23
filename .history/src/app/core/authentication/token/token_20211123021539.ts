@@ -120,13 +120,15 @@ export class JwtToken extends SimpleToken {
     if (!this.payload && this._payload.email === undefined ) {
       return null;
     }
+    console.log("set  "+JSON.stringify(this.payload ))
+
     const user = {} as UserPayload;
     user.id = this.payload.sub;
     user.name = this.payload.name;
     user.sobrenome = this.payload.given_name;
     user.email = this.payload.email;
     user.emailVerified = this.payload.email_verified;
-    return user;
+    return this.payload.sub;
   }
 
   sub() {

@@ -11,6 +11,8 @@ export class MainPage implements OnInit {
   constructor(public usuario: UsuarioService) { }
 
   ngOnInit() {
+    console.log("user "+    this.usuario.pessoa.nome
+    )
   }
 
 }

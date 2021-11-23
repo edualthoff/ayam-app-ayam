@@ -16,7 +16,6 @@ ion-button {
   text-transform: none;
  }
 
-/** Elimina a borda quando o elemento recebe um foco ex click */
-:focus {
+ :focus {
   outline: none;
  }

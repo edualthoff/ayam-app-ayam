@@ -1,3 +1,4 @@
+import { UsuarioService } from './../../../core/services/utils/usuario.service';
 import { CloseActionAppService } from './../../../shared/services/close-app/close-action-app.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingPage implements OnInit {
 
-  constructor(public closeAction: CloseActionAppService) { }
+  constructor(public closeAction: CloseActionAppService, public usuario: UsuarioService) { }
 
   ngOnInit() {
   }

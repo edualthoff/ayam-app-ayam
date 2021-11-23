@@ -5,7 +5,7 @@
     </ion-avatar>
   </div>
   <div class="app-user-view-label">
-    <ion-label color="dark">{{(!!usuario?.pessoa ? usuario.pessoa.nome : 'Bem vindo') | titlecase}}</ion-label>
-    <ion-label> <h3>{{(!!usuario?.pessoa ? usuario.pessoa.email : '') }}</h3> </ion-label>
+    <ion-label color="dark">{{(!usuario?.pessoa ? usuario.pessoa.nome : 'Bem vindo') | titlecase}}</ion-label>
+    <ion-label> <h3>{{(!usuario?.pessoa ? usuario.pessoa.email : '') }}</h3> </ion-label>
   </div>
 </div>

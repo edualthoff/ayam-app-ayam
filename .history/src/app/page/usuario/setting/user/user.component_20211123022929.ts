@@ -11,6 +11,7 @@ export class UserComponent implements OnInit {
   constructor(public usuario: UsuarioService) { }
 
   ngOnInit() {
+    console.log("a "+!!this.usuario?.pessoa+" "+JSON.stringify(this.usuario?.pessoa))
   }
 
 }

@@ -10,7 +10,6 @@ export class UserComponent implements OnInit {
 
   constructor(public usuario: UsuarioService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

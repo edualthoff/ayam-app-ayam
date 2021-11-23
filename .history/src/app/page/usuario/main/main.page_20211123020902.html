@@ -4,7 +4,7 @@
       <div class="alinhar-itens-vertical-centro app-button-setting ion-no-border" [routerLink]="['./setting']" >
           <fa-icon [icon]="['fas', 'user-circle']" style="font-size: 24px;"></fa-icon>
           <ion-label style="padding-left: 5px;">
-            {{(!!usuario.pessoa ? usuario.pessoa.nome : 'Entrar') | titlecase}}
+            {{!!usuario.pessoa?.nome ? usuario.pessoa.nome : 'Entrar'}}
           </ion-label>
       </div>
       <span style="flex: auto;"></span>
